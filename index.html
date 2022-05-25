@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="welcome-screen">
+        <!-- Here will be an title screen with rules, maybe a rotating dice or something? -->
+    </div>
+
+    <div id="game">
+        <!-- This will contain the two player version of the game -->
+        <div id="top">
+            <div class="scene">
+                <div class="cube">
+                    <!-- One -->
+                    <div class="cube__face cube__face--front dice" id="first-face">
+                        <span class="dot"></span>
+                    </div>
+        
+                    <!-- Six -->
+                    <div class="cube__face cube__face--back dice" id="sixth-face">
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+        
+                    <!-- Four -->
+                    <div class="cube__face cube__face--right dice" id="fourth-face">
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <!-- Three -->
+                    <div class="cube__face cube__face--left dice" id="third-face">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    
+                    <!-- Two -->
+                    <div class="cube__face cube__face--top dice" id="second-face">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    
+                    <!-- Five -->
+                    <div class="cube__face cube__face--bottom dice" id="fifth-face">
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="center-column">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="button-wrapper">
+                <button id="end-turn">End Turn</button>
+                <button id="roll-dice">Roll the dice</button>
+                <button id="reset">Restart Game</button>
+            </div>
+            
+        </div>
+        <div id="left">
+            <label>Player 1</label>
+            <p class="score" id="player-one-score">0</p>
+        </div>
+        <div id="right">
+            <label>Player 2</label>
+            <p class="score" id="player-two-score">0</p>
+        </div>
+    </div>
+    
+      
+      
+      
+
+</body>
+</html>
