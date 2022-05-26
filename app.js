@@ -1,6 +1,6 @@
 // DECLAERE HTML CONSTANTS
-const btnStartGame = document.getElementById("enter-game");
 const pageWelcome = document.getElementById("welcome-screen");
+const btnStartGame = document.getElementById("enter-game");
 const pageGame = document.getElementById("game");
 
 const cube = document.querySelector('.cube');
