@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 #welcome-screen{
     /* display: none; */
     display: flex;
@@ -143,7 +145,7 @@ label {
 
 * { box-sizing: border-box; margin:0;}
 
-body { font-family: sans-serif; }
+body { font-family: 'Nanum Gothic Coding', monospace; }
 
 .scene {
   width: 200px;
