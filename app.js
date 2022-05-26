@@ -1,4 +1,8 @@
 // DECLAERE HTML CONSTANTS
+const btnStartGame = document.getElementById("enter-game");
+const pageWelcome = document.getElementById("welcome-screen");
+const pageGame = document.getElementById("game");
+
 const cube = document.querySelector('.cube');
 const btnRoll = document.getElementById("roll-dice");
 const btnEnd = document.getElementById("end-turn");
@@ -196,7 +200,7 @@ const addScore = (num) => {
             console.log("P1 Rolled 1, Locking Score [addScore]");
             lock = true;
             endTurn();
-        } else if (playerTwoTurn) { 
+        } else if (playerTwoTurn) {
             console.log("P2 Rolled 1, Locking Score [addScore]");
             lock = true;
             endTurn();
@@ -207,6 +211,11 @@ const addScore = (num) => {
 
 // set initial side
 setInitial();
+
+btnStartGame.addEventListener("click", () => {
+    pageWelcome.style.display = "none";
+    pageGame.style.display = "flex";
+})
 
 btnRoll.addEventListener("click", changeSide);
 btnEnd.addEventListener("click", endTurn);
