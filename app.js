@@ -32,10 +32,6 @@ let playerTwoBust = false;
 
 let lock = false;
 
-
-// DECLARE GAME GLOBAL VARIABLES
-
-
 // SET INITIAL FACE OF THE DICE, SO THAT IT DOES NOT REFRESH WHEN THE GAME IS STARTED
 const setInitial = () => {
 
@@ -105,31 +101,6 @@ const resetGame = () => {
 
 }
 
-
-// switch (lock)
-//         {
-//             case true:
-//                 // Do Something
-//                 playerOneBust = true;
-//                 if (playerTwoBust)
-//                 {
-//                     // Game is OVER
-//                 } else
-//                 {
-//                     // Player 2 is still active.
-//                 }
-//                 break;
-//             case false:
-//                 // Do Something Else
-//                 if (playerTwoBust)
-//                 {
-//                     // Cannot Switch, Prompt to End Game instead
-//                 } else
-//                 {
-//                     // Switch to player two
-//                 }
-//         }
-
 // END PLAYER ONE'S TURN
 const endTurn = () => {
     if (playerOneTurn) {
@@ -143,7 +114,7 @@ const endTurn = () => {
                     checkWinner();
                 } else {
                     // Player 2 is still active.
-                    alert("Ending Player 1's turn, handing over to player 2.")
+                    alert("Player 1 is bust, handing over to player 2.")
                     playerOneTurn = false;
                     playerTwoTurn = true;
                 }
@@ -152,13 +123,21 @@ const endTurn = () => {
                 // Do Something Else
                 if (playerTwoBust) {
                     // Cannot Switch, Prompt to End Game instead
+                    if (confirm("Other player is bust! Do you want to end the game instead?")) {
+                        checkWinner();
+                    }
                 } else {
                     // Switch to player two
+                    alert("Ending player 1's turn, handing over to player 1.");
+                    playerOneTurn = false;
+                    playerTwoTurn = true;
                 }
         }
     } else if (playerTwoTurn) {
         switch (lock) {
+
             case true:
+
                 // Locking Player 2
                 playerTwoBust = true;
                 if (playerOneBust) {
@@ -167,29 +146,32 @@ const endTurn = () => {
                     checkWinner();
                 } else {
                     // Player 1 is still active.
-                    alert("Ending Player 1's turn, handing over to player 2.")
-                    playerOneTurn = false;
-                    playerTwoTurn = true;
+                    alert("Player 2 is bust, handing over to player 1.")
+                    playerOneTurn = true;
+                    playerTwoTurn = false;
                 }
                 break;
             case false:
                 // Do Something Else
                 if (playerOneBust) {
                     // Cannot Switch, Prompt to End Game instead
+                    if (confirm("Other player is bust! Do you want to end the game instead?")) {
+                        checkWinner();
+                    }
                 } else {
                     // Switch to player two
+                    alert("Ending player 2's turn, handing over to player 1.");
+                    playerOneTurn = true;
+                    playerTwoTurn = false;
+
                 }
         }
     }
-
-
-
+    // RESET LOCK
+    lock = false;
 }
 
-
-
 const addScore = (num) => {
-
     // CHECK IF PLAYER ROLLS A 1, ALLOW GAME TO CONTINUE IF THEY DO NOT
     if (num != 1) {
 
@@ -211,13 +193,10 @@ const addScore = (num) => {
         // OTHERWISE, LOCK P2'S SCORE AND OUTPUT IT TO SCREEN WITH MESSAGE
         // THEN EVALUATE WINNER
         if (playerOneTurn) {
-            // 
-
             console.log("P1 Rolled 1, Locking Score [addScore]");
             lock = true;
             endTurn();
-        } else if (playerTwoTurn) {
-            // 
+        } else if (playerTwoTurn) { 
             console.log("P2 Rolled 1, Locking Score [addScore]");
             lock = true;
             endTurn();
@@ -225,7 +204,6 @@ const addScore = (num) => {
     }
 
 }
-
 
 // set initial side
 setInitial();
