@@ -132,7 +132,7 @@ const endTurn = () => {
                     }
                 } else {
                     // Switch to player two
-                    alert("Ending player 1's turn, handing over to player 1.");
+                    alert("Ending player 1's turn, handing over to player 2.");
                     playerOneTurn = false;
                     playerTwoTurn = true;
                 }
